@@ -39,7 +39,7 @@ export default function App() {
       justify-center"
     >
       <span className="w-11/12 text-xl font-medium break-words text-center pb-8">
-        Roman Numbers Converter
+        Biggest Roman Number
       </span>
       {displayPopUp && (
         <PopUpMessage

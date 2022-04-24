@@ -6,7 +6,7 @@ export default function SearchInput(props) {
   return (
     <div className="w-full h-auto flex items-center justify-center relative">
       <input
-        placeholder="Type some roman letters"
+        placeholder="Type some roman number values"
         value={value}
         onChange={({ target }) => setValue(target.value)}
         className="w-72 px-4 py-2 text-base border-b border-zinc-400 text-center my-4
