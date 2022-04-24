@@ -4,12 +4,18 @@ import { CgMathPlus } from 'react-icons/cg';
 
 export default function PopUpMessage(props) {
   const {
-    handleClick,
+    setDisplayPopUp,
+    setInputValue,
     responseObj: {
       title,
       data: { value, number, message },
     },
   } = props;
+
+  const handleClick = () => {
+    setDisplayPopUp(false);
+    setInputValue('');
+  };
 
   const handleMessage = () => {
     if (!message) {
@@ -41,9 +47,9 @@ export default function PopUpMessage(props) {
         bg-white rounded shadow-lg shadow-zinc-400 relative"
       >
         <CgMathPlus
-          onClick={() => handleClick(false)}
           size="25"
           className="rotate-45 absolute right-2 top-2"
+          onClick={handleClick}
         />
         <span
           className="w-9/12 h-auto text-lg font-semibold tracking-wide break-words
@@ -64,5 +70,6 @@ PopUpMessage.propTypes = {
     number: PropTypes.number,
     message: PropTypes.string,
   }),
-  handleClick: PropTypes.func,
+  setDisplayPopUp: PropTypes.func,
+  setInputValue: PropTypes.func,
 }.isRequired;

@@ -38,8 +38,15 @@ export default function App() {
       className="w-full h-full min-h-[100vh] flex flex-col flex-nowrap items-center
       justify-center"
     >
+      <span className="w-11/12 text-xl font-medium break-words text-center pb-8">
+        Roman Numbers Converter
+      </span>
       {displayPopUp && (
-        <PopUpMessage responseObj={responseObj} handleClick={setDisplayPopUp} />
+        <PopUpMessage
+          responseObj={responseObj}
+          setDisplayPopUp={setDisplayPopUp}
+          setInputValue={setInputValue}
+        />
       )}
       <SearchInput value={inputValue} setValue={setInputValue} />
       <SearchButton
